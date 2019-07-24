@@ -7,9 +7,24 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
-  background-position: center;
-  background-size: cover;
-  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+
+    & .background-image {
+      transform: scale(1.1);
+      transition: all 6s ease-out;
+      &::before {
+        transition: opacity 4s;
+        opacity: 0.8;
+      }
+    }
+
+    & .content {
+      background: rgba(34, 34, 34, 0.9);
+    }
+  }
 
   &:first-child {
     margin-right: 7.5px;
@@ -18,23 +33,27 @@
   &:last-child {
     margin-left: 7.5px;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+  .background-image {
     width: 100%;
-    background-color: rgba($color: #000000, $alpha: 0.2);
-    z-index: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #111;
+      opacity: 0.3;
+      z-index: 1;
+    }
   }
   &.large {
     height: 380px;
-  }
-  &:hover {
-    &::before {
-      background-color: rgba($color: #000000, $alpha: 0.6);
-    }
   }
   .content {
     height: 90px;
@@ -44,7 +63,9 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    background: rgba(34, 34, 34, 0.7);
     z-index: 2;
+    position: absolute;
 
     .title {
       font-weight: bold;
