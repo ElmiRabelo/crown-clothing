@@ -4,6 +4,8 @@
 	flex-direction: column;
 	height: 350px;
 	align-items: center;
+	padding-bottom: 10px;
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 
 	.image {
 		width: 100%;
@@ -23,6 +25,7 @@
 		.name {
 			width: 90%;
 			margin-bottom: 15px;
+			padding: 0 10px;
 		}
 
 		.price {
