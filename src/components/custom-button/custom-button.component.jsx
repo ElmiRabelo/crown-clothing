@@ -2,8 +2,12 @@ import React from "react";
 
 import "./custom-button.styles.scss";
 
-const CustomButton = ({ children, ...otherProps }) => (
-	<button className="custom-button" {...otherProps}>
+//Sobre isGoogleSignIn: se a propriedade foi passada como prop então será true, o que vai aplicar a classe unica de google=sign-in. Se a prop não foi passada é false, a classe não se aplica.
+const CustomButton = ({ children, isGoogleSignIn, ...otherProps }) => (
+	<button
+		className={`${isGoogleSignIn ? "google-sign-in" : ""} custom-button`}
+		{...otherProps}
+	>
 		{children}
 	</button>
 );
