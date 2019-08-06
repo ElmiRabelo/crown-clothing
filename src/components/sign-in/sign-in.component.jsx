@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
-import { SignInWithGoogle } from "../../firebase/firebase.utils";
+import { auth, SignInWithGoogle } from "../../firebase/firebase.utils";
 
 import "./sign-in.styles.scss";
 
@@ -20,8 +20,17 @@ class SignIn extends Component {
 		this.setState({ [name]: value });
 	};
 
-	handleSubmit = evt => {
+	handleSubmit = async evt => {
 		evt.preventDefault();
+
+		const { email, password } = this.state;
+
+		//Faz o login no site utilizando email e password utilizando o metodo fornecido por google auth. Em seguida reseta o form.
+		try {
+			await auth.signInWithEmailAndPassword(email, password);
+		} catch (error) {
+			console.log("Erro ao tentar logar com usuário", error);
+		}
 
 		this.setState({ email: "", password: "" });
 	};

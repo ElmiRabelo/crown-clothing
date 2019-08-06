@@ -30,6 +30,7 @@ class SignUp extends Component {
 		}
 
 		try {
+			//usa o metodo criado em firebase.utils.js para verificar a existencia de usuario e se o mesmo não existir, armazena os dados no database -> verificar firebase.utils
 			const { user } = await auth.createUserWithEmailAndPassword(
 				email,
 				password
