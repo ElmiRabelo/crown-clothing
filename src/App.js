@@ -65,9 +65,11 @@ class App extends React.Component {
 	}
 }
 
+//me permite usar currentUser como prop em app
 const mapStateToProps = ({ user }) => ({
 	currentUser: user.currentUser
 });
+
 const mapDispatchToProps = dispatch => ({
 	setCurrentUser: user => dispatch(setCurrentUser(user))
 });
