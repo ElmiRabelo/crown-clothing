@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase.utils";
@@ -31,4 +32,10 @@ const Header = ({ currentUser }) => (
 	</div>
 );
 
-export default Header;
+// State aqui representa o Root Reducer, e atribuo o valor de currentUser para o valor definido como default em user.reducer
+const mapStateToProps = state => ({
+	currentUser: state.user.currentUser
+});
+
+//connect é um High Order Component, o que faz com que Header tenha 'conhecimento' das propriedas de Redux
+export default connect(mapStateToProps)(Header);
