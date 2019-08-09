@@ -15,6 +15,8 @@ import Header from "./components/header/header.component";
 //utility
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "./redux/user/user.selectors";
 
 //actual code
 class App extends React.Component {
@@ -66,8 +68,9 @@ class App extends React.Component {
 }
 
 //me permite usar currentUser como prop em app
-const mapStateToProps = ({ user }) => ({
-	currentUser: user.currentUser
+//usando createStructuredSelector caso futuramente adicione mais props
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
