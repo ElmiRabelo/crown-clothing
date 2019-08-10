@@ -15,3 +15,18 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 	//uma vez que a função rode, ou seja, um item seja adicionado ao cart, o array retorna os items existentes, mais o item adicionado com a prop de quantity: 1.
 	return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+//verificar se a quantitade é 1, se for, remover o item de checkout, se houver mais que 1 item, diminuir a quantidade
+export const removeItem = (cartItems, cartItemToRemove) => {
+	const existingCartItem = cartItems.find(item => item.id === cartItemToRemove.id);
+
+	if(existingCartItem.quantity === 1){
+		return cartItems.filter( item => item.id !== cartItemToRemove.id);
+	}
+
+	return cartItems.map(item => 
+		item.id === cartItemToRemove.id ?
+		{...item, quantity: item.quantity - 1} 
+		: item
+		)
+}
