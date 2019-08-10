@@ -1,3 +1,5 @@
+//tem o proposito de adicionar items ao cart, verificando se já existe o item a ser adicionado no cart, se existir só aumenta a quantitade, caso não exista, adicionamos o item com quantidade inicial de 1
+
 //recebe como primeiro paramentro, o array de items do state, e como segundo, o item que será adicionado ao array
 export const addItemToCart = (cartItems, cartItemToAdd) => {
 	//se ao pecorrer o array encontrar um item com id igual ao item que está sendo adicionado, retorna esse item, se não, retorna undefined
