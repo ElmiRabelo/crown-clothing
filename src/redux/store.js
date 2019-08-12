@@ -11,4 +11,4 @@ const store = createStore(rootReducer, applyMiddleware(...minddlewares));
 //uma versão de store com persist, capaz de armazenar os dados
 const persistor = persistStore(store);
 
-export default { store, persistor };
+export { store, persistor };
