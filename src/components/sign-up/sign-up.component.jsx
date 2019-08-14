@@ -7,6 +7,7 @@ import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 import "./sign-up.styles.scss";
 
+//reponsavel pela pagina de cadastramento
 class SignUp extends Component {
 	constructor(props) {
 		super(props);
@@ -60,15 +61,15 @@ class SignUp extends Component {
 		const { displayName, email, password, confirmPassword } = this.state;
 		return (
 			<div className="sign-up">
-				<h2 className="title">I do not have a account</h2>
-				<span>Sign up with your email and password</span>
+				<h2 className="title">Eu não tenho uma conta</h2>
+				<span>Criar conta com email e senha</span>
 				<form className="sign-up-form" onSubmit={this.handleSubmit}>
 					<FormInput
 						type="text"
 						name="displayName"
 						value={displayName}
 						handleChange={this.handleChange}
-						label="Display Name"
+						label="Nome"
 						required
 					/>
 					<FormInput
@@ -84,7 +85,7 @@ class SignUp extends Component {
 						name="password"
 						value={password}
 						handleChange={this.handleChange}
-						label="Password"
+						label="Senha"
 						required
 					/>
 					<FormInput
@@ -92,10 +93,10 @@ class SignUp extends Component {
 						name="confirmPassword"
 						value={confirmPassword}
 						handleChange={this.handleChange}
-						label="Confirm Password"
+						label="Confirmar Senha"
 						required
 					/>
-					<CustomButton type="submit">SIGN UP</CustomButton>
+					<CustomButton type="submit">Cadastrar</CustomButton>
 				</form>
 			</div>
 		);

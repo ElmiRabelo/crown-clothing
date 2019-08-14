@@ -10,6 +10,7 @@ import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 import "./cart-icon.styles.scss";
 
+//responsavel pelo icone do cart e por conter o contador de items e ação de mostrar ou não o cart dropdown
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
 	<div className="cart-icon" onClick={toggleCartHidden}>
 		<ShoppingIcon className="shopping-icon" />

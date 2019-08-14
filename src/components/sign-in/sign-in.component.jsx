@@ -38,8 +38,8 @@ class SignIn extends Component {
 	render() {
 		return (
 			<div className="sign-in">
-				<h2>I already have an account</h2>
-				<span>Sign in with your email and password</span>
+				<h2>Eu já tenho uma conta</h2>
+				<span>Entre com seu email e senha</span>
 
 				<form onSubmit={this.handleSubmit}>
 					<FormInput
@@ -55,13 +55,13 @@ class SignIn extends Component {
 						name="password"
 						value={this.state.password}
 						handleChange={this.handleChange}
-						label="password"
+						label="senha"
 						required
 					/>
 					<div className="buttons">
-						<CustomButton type="submit">Sign In</CustomButton>
+						<CustomButton type="submit">Entrar</CustomButton>
 						<CustomButton onClick={SignInWithGoogle} isGoogleSignIn>
-							Sign in with Google
+							Entrar com Google
 						</CustomButton>
 					</div>
 				</form>

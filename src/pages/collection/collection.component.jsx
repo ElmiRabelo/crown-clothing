@@ -7,6 +7,7 @@ import CollectionItem from "../../components/collection-item/collection-item.com
 
 import "./collection.styles.scss";
 
+//responsavel por mostrar a lista completa de itens de uma collection
 const CollectionPage = ({ collection }) => {
 	const { title, items } = collection;
 	return (
