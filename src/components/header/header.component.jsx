@@ -16,6 +16,7 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import "./header.styles.scss";
 
+//Responsvel pelo menu no topo da pagina
 const Header = ({ currentUser, hidden }) => (
 	<div className="header">
 		<Link className="logo-container" to="/">
@@ -26,15 +27,15 @@ const Header = ({ currentUser, hidden }) => (
 				SHOP
 			</Link>
 			<Link className="option" to="/contact">
-				CONTACT
+				CONTATO
 			</Link>
 			{currentUser ? (
 				<div className="option" onClick={() => auth.signOut()}>
-					SIGN OUT
+					SAIR
 				</div>
 			) : (
 				<Link className="option" to="/signin">
-					SIGN IN
+					ENTRAR
 				</Link>
 			)}
 			<CartIcon />

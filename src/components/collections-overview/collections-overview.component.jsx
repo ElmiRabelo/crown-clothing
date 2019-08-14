@@ -8,6 +8,7 @@ import CollectionPreview from "../collection-preview/collection-preview.componen
 
 import "./collections-overview.styles.scss";
 
+//resposavel por receber o array de collections e mapear para exibir cada um preview de cada collection chamando o componente CollectionPreview
 const CollectionsOverview = ({ collections }) => (
 	<div className="collections-overview">
 		{collections.map(({ id, ...otherCollectionProps }) => (

@@ -7,6 +7,7 @@ import { selectDirectorySections } from "../../redux/directory/directory.selecto
 
 import "./directory.styles.scss";
 
+//Responsavel por conter os itens da pagina inicial que servem como menu para as paginas das coleções, é passado as propriedades de sections(provindas do redux store)
 const Directory = ({ sections }) => (
 	<div className="directory-menu">
 		{sections.map(({ id, ...otherSectionProps }) => (

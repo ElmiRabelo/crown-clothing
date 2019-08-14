@@ -3,11 +3,11 @@ import CollectionItem from "../collection-item/collection-item.component";
 
 import "./collection-preview.styles.scss";
 
+//resposavel por fazer o preview de cada collection limitando a quantidade de itens a ser exibida
 const CollectionPreview = ({ title, items }) => (
 	<div className="collection-preview">
 		<h1 className="title">{title.toUpperCase()}</h1>
 		<div className="preview">
-			{}
 			{/* Para cada objeto dentro de item, estou criando uma div com uma key e renderizando o nome do item. Filter está limitando o número de items-filhos para 4. */
 			//em map, item esta passando todo o ITEM como uma propriedade, ou seja, o objeto com seus key: value pars.
 			//desse modo posso utilizar addItem(redux action) em collection-item e adicionar o item inteiro como parametro e adiciona-lo em cart-dropdown

@@ -6,6 +6,7 @@ import CollectionPage from "../collection/collection.component";
 
 import "./shop.styles.scss";
 
+//responsavel por exibir a visão geral das coleções e seus itens, bem como fazer o routing para cada collection
 const ShopPage = ({ match }) => (
 	<div className="shop-page">
 		<Route exact path={`${match.path}`} component={CollectionsOverview} />

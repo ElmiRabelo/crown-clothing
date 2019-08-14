@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import "./menu-item.styles.scss";
 
+//Reponsavel pelos Itens individuais que estão presente na homepage, recebe as propriedas passadas Directory
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 	<div
 		className={`${size} menu-item`}
@@ -16,7 +17,7 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 		/>
 		<div className="content">
 			<h1 className="title">{title}</h1>
-			<span className="subtitle">SHOP NOW</span>
+			<span className="subtitle">Compre Agora</span>
 		</div>
 	</div>
 );

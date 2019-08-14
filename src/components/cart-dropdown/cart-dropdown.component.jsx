@@ -13,13 +13,14 @@ import CartItem from "../cart-item/cart-item.component";
 
 import "./cart-dropdown.styles.scss";
 
+//Responsavel pelo cart dropdown, mostrar os intens no carrinho em um dropdown
 const CartDropdown = ({ cartItems, history, dispatch }) => (
 	<div className="cart-dropdown">
 		<div className="cart-items">
 			{cartItems.length ? (
 				cartItems.map(item => <CartItem key={item.id} item={item} />)
 			) : (
-				<span className="empty-message">Your cart is empty</span>
+				<span className="empty-message">Seu carrinho está vazio</span>
 			)}
 		</div>
 		<CustomButton
@@ -28,7 +29,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
 				dispatch(toggleCartHidden());
 			}}
 		>
-			GO TO CHECKOUT
+			Ir para pagamento
 		</CustomButton>
 	</div>
 );

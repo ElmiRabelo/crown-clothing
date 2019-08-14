@@ -4,6 +4,14 @@
 
 body {
 	font-family: "Open Sans Condensed", sans-serif;
+	/* padding: 20px 50px; */
+	font-size: 18px;
+}
+
+.homepage,
+.collection-page,
+.checkout-page,
+.shop-page {
 	padding: 20px 50px;
 }
 

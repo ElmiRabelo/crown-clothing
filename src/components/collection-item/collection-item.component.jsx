@@ -7,6 +7,7 @@ import CustomButton from "../custom-button/custom-button.component";
 
 import "./collection-item.styles.scss";
 
+//resposavel por exibir os itens individuais das collection, o 'menor' item de collection
 const CollectionItem = ({ item, addItem }) => {
 	//destroturing item para utilizar suas props, item então é passado como objeto para addItem(redux action)
 	const { name, price, imageUrl } = item;
@@ -23,7 +24,7 @@ const CollectionItem = ({ item, addItem }) => {
 				<span className="price">{price}</span>
 			</div>
 			<CustomButton inverted onClick={() => addItem(item)}>
-				Add to cart
+				Adicionar
 			</CustomButton>
 		</div>
 	);
