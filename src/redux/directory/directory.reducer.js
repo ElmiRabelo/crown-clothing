@@ -4,33 +4,33 @@ const INITIAL_STATE = {
 			title: "chapéus",
 			imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
 			id: 1,
-			linkUrl: "shop/chapeus"
+			linkUrl: "shop/hats"
 		},
 		{
 			title: "jaquetas",
 			imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
 			id: 2,
-			linkUrl: "shop/jaquetas"
+			linkUrl: "shop/jackets"
 		},
 		{
 			title: "sapatos",
 			imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
 			id: 3,
-			linkUrl: "shop/sapatos"
+			linkUrl: "shop/sneakers"
 		},
 		{
 			title: "para elas",
 			imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
 			size: "large",
 			id: 4,
-			linkUrl: "shop/mulheres"
+			linkUrl: "shop/womens"
 		},
 		{
 			title: "para eles",
 			imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
 			size: "large",
 			id: 5,
-			linkUrl: "shop/homens"
+			linkUrl: "shop/mens"
 		}
 	]
 };
