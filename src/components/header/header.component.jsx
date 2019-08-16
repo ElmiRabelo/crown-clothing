@@ -14,34 +14,32 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 //assets and styles
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-import "./header.styles.scss";
+import {
+	HeaderContainer,
+	LogoContainer,
+	OptionsContainer,
+	OptionDiv,
+	OptionLink
+} from "./header.styles";
 
 //Responsvel pelo menu no topo da pagina
 const Header = ({ currentUser, hidden }) => (
-	<div className="header">
-		<Link className="logo-container" to="/">
-			<Logo className="logo" />
-		</Link>
-		<div className="options">
-			<Link className="option" to="/">
-				HOME
-			</Link>
-			<Link className="option" to="/shop">
-				SHOP
-			</Link>
+	<HeaderContainer>
+		<LogoContainer to="/">
+			<Logo />
+		</LogoContainer>
+		<OptionsContainer>
+			<OptionLink to="/">HOME</OptionLink>
+			<OptionLink to="/shop">SHOP</OptionLink>
 			{currentUser ? (
-				<div className="option" onClick={() => auth.signOut()}>
-					SAIR
-				</div>
+				<OptionDiv onClick={() => auth.signOut()}>SAIR</OptionDiv>
 			) : (
-				<Link className="option" to="/signin">
-					ENTRAR
-				</Link>
+				<OptionLink to="/signin">ENTRAR</OptionLink>
 			)}
 			<CartIcon />
-		</div>
+		</OptionsContainer>
 		{hidden ? null : <CartDropdown />}
-	</div>
+	</HeaderContainer>
 );
 
 // createStructured diminui a quantidade de codigo que escreveria, é como se passasse state como paramentro para cada selector
