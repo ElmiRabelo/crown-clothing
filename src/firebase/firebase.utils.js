@@ -3,42 +3,42 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-	apiKey: "AIzaSyDvrv0wWOK3aZlfV5jkemIdlbQKgBBOmJ8",
-	authDomain: "crown-clothing-db-c73ad.firebaseapp.com",
-	databaseURL: "https://crown-clothing-db-c73ad.firebaseio.com",
-	projectId: "crown-clothing-db-c73ad",
-	storageBucket: "",
-	messagingSenderId: "322537233388",
-	appId: "1:322537233388:web:3a43844f060c5948"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: "crown-clothing-db-c73ad.firebaseapp.com",
+  databaseURL: "https://crown-clothing-db-c73ad.firebaseio.com",
+  projectId: "crown-clothing-db-c73ad",
+  storageBucket: "",
+  messagingSenderId: "322537233388",
+  appId: "1:322537233388:web:3a43844f060c5948"
 };
 
 //async function responsavel por criar um documento do user no database
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-	if (!userAuth) return;
+  if (!userAuth) return;
 
-	//Coletando o uid do usuario fornecido pelo google Auth e puxando os dados sobre esse documento
-	const userRef = firestore.doc(`users/${userAuth.uid}`);
+  //Coletando o uid do usuario fornecido pelo google Auth e puxando os dados sobre esse documento
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
 
-	const snapShot = await userRef.get();
+  const snapShot = await userRef.get();
 
-	//verifica se existe algum dado criado no database relacionado ao user, se não existir, cria e armazena no database
-	if (!snapShot.exists) {
-		const { displayName, email } = userAuth;
-		const createdAt = new Date();
+  //verifica se existe algum dado criado no database relacionado ao user, se não existir, cria e armazena no database
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
 
-		try {
-			await userRef.set({
-				displayName,
-				email,
-				createdAt,
-				...additionalData
-			});
-		} catch (error) {
-			console.log("erro ao criar usuario", error.message);
-		}
-	}
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.log("erro ao criar usuario", error.message);
+    }
+  }
 
-	return userRef;
+  return userRef;
 };
 
 firebase.initializeApp(config);
